@@ -36,7 +36,7 @@ public class FirstPlugin extends JavaPlugin implements Listener {
 
         public void updatePlayerState() {
             ChatColor playerColor = getPlayerColor();
-            player.setDisplayName(playerColor + player.getDisplayName());
+            player.setDisplayName(playerColor + ChatColor.stripColor(player.getDisplayName()));
 
             if (numLives == 0) {
                 player.setGameMode(GameMode.SPECTATOR);
@@ -125,10 +125,14 @@ public class FirstPlugin extends JavaPlugin implements Listener {
     public void onEntityDeath(EntityDeathEvent entityDeathEvent) {
         Entity entity = entityDeathEvent.getEntity();
 
-        if (!entity.getClass().isInstance(Player.class)) {
+        getLogger().info(String.format("An entity died: %s", entity));
+
+        if (!(entity instanceof Player)) {
             // Currently - do nothing on non-player death.
             return;
         }
+
+        getLogger().info(String.format("A player died: %s", entity));
 
         // Get the player data for this player.
         Player thisPlayer = (Player) entity;
