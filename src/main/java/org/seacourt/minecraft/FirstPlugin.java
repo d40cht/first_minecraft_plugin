@@ -2,7 +2,7 @@ package org.seacourt.minecraft;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class App extends JavaPlugin {
+public class FirstPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Hello, SpigotMC!");

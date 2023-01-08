@@ -1,0 +1,7 @@
+main: org.seacourt.minecraft.FirstPlugin
+name: FirstPlugin
+version: 0.0.1
+api-version: 1.17
+description: Some first plugin nonsense that likely doesn't work at all.
+load: POSTWORLD
+authors: [d40cht, blockedbucket29]
